@@ -12,9 +12,10 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
 
 VOLUME /data/db
 
-ENV AUTH yes
-ENV STORAGE_ENGINE wiredTiger
+ENV AUTH no
+ENV STORAGE_ENGINE mmapv1
 ENV JOURNALING yes
+ENV DIR_PER_DB yes
 
 ADD run.sh /run.sh
 ADD set_mongodb_password.sh /set_mongodb_password.sh

@@ -11,6 +11,10 @@ if [ "$JOURNALING" == "no" ]; then
     cmd="$cmd --nojournal"
 fi
 
+if [ "$DIR_PER_DB" == "yes" ]; then
+    cmd="$cmd --directoryperdb"
+fi
+
 if [ "$OPLOG_SIZE" != "" ]; then
     cmd="$cmd --oplogSize $OPLOG_SIZE"
 fi
